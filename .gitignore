@@ -1,0 +1,16 @@
+_Store
+*.swp
+*.swo
+.idea/
+*.css.css
+/node_modules
+.vscode
+src/.vscode
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.directory
+.repos
+.current
+/build
+/dist

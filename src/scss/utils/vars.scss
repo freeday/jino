@@ -1,0 +1,56 @@
+// Font
+@import "/fonts.scss";
+$mainFontFace                     : 'PT Sans';
+$txtFontFace                      : 'Arial';
+
+// Colors: //////////////////////////////////
+
+// Font
+$labelFontColor                   : #8494ab;
+$navFontColor                     : #ffffff;
+$navFontColorHover                : #808592;
+$navFontColorActive               : #808592;
+$placeholderFontColorActive       : #bec6cf;
+$inputFontColor                   : #373c43;
+$headerFontColor                  : #383d43;
+$ccvFontColor                     : #8494ab;
+$footerFontColor                  : #89909d;
+$infoTxtFontColor                 : #535864;
+
+// Backgrounds
+$mainBg                           : #101114;
+$navBg                            : #1f2229;
+$navBgActive                      : #2a2d37;
+$footerBg                         : #373c43;
+$containerPayBg                   : #f7f8f8;
+$btnSimpleBottom                  : #004ca2;
+$btnSimpleTop                     : #005abf;
+
+// Border
+$inputBorderColor                 : #e4e9ee;
+
+
+// Size: //////////////////////////////////
+
+//Width
+$containerDekstopWidth            : 960px;
+$containerDekstopPayWidth         : 638px;
+$navDekstopWidth                  : 320px;
+$containerTabletWidth             : 720px;
+$containerTabletPayWidth          : 518px;
+$navTabletWidth                   : 200px;
+$containerPhoneWidth              : 320px;
+$containerPhonePayWidth           : 638px;
+$navPhoneWidth                    : 320px;
+
+//Height
+$containerDekstopHeight           : 832px;
+
+// Font
+$baseFontSize                     : 16px;
+$lFontSize                        : 22px;
+$mFontSize                        : 18px;
+$xmFontSize                       : 17px;
+$sFontSize                        : 16px;
+$xsFontSize                       : 14px;
+$xxsFontSize                      : 12px;
