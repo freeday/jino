@@ -1,0 +1,10 @@
+$arr: (autorenewal, businesscard, certificate, cloud, dns, dnssec, freessl, integration, interface, redirect);
+.icon {
+  width: 64px;
+  height: 64px;
+  @each $icon in $arr {
+    &-#{$icon} {
+      background-image: url('/img/icons/#{$icon}.svg');
+    }
+  }
+}
