@@ -1,6 +1,10 @@
 .container {
-  position: relative;
-  display: flex;
+  min-height: 600px;
+  // width: 90%;
+  max-width: 1092px;
+  min-width: 819px;
+  margin-left: auto;
+  margin-right: auto;
   &-domains {
     background: url('/img/bg/background1.jpg') no-repeat;
     background-size: 1100px 660px;

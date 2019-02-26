@@ -110,3 +110,36 @@
 
   @return $pixels / $context * 1rem;
 }
+
+@mixin col($col, $sum, $gap: 12px, $align: top) {
+  font-size: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+	$konst: 0;
+
+	@if $sum == 12 {
+    $konst: 1.00633%;
+  } @else if $sum == 4 {
+    $konst: 0.83%;
+  }
+
+  @media only screen and (min-width: 819px) {
+		width: ($col/$sum) * 100% - $konst;
+		margin-left: 1.098901099%;
+    vertical-align: $align;
+  }
+	@media only screen and (max-width: 819px) {
+		width: ($col/$sum) * 100% - $konst;
+		margin-left: 1.098901099%;
+    vertical-align: $align;
+  }
+  @media only screen and (min-width: 1092px) {
+    width: ($col/$sum) * 100% - $konst;
+		margin-left: 1.098901099%;
+    vertical-align: $align;
+  }
+	@media only screen and (max-width: 320px) {
+    width: percentage($col/$sum);
+    vertical-align: $align;
+  }
+}

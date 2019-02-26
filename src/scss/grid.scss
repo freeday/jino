@@ -1,0 +1,21 @@
+.grid {
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1092px;
+    min-width: 819px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0;
+  }
+  @for $i from 1 through 12 {
+    &-col-#{$i} {
+      @include col(1, $i)
+      background-color: black;
+      height: 60px;
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+}
