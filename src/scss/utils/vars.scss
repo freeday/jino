@@ -1,13 +1,18 @@
 // Font
 @import "/fonts.scss";
-$mainFontFace                     : 'PT Sans';
-$txtFontFace                      : 'Arial';
+$mainFontFace                     : PT Sans, Arial, Helvetica, sans-serif;
+$mainFontFaceBold                 : PT Sans Bold, Arial, Helvetica, sans-serif;
+$mainFontFaceItalic               : PT Sans Italic, Arial, Helvetica, sans-serif;
+$titleFontFace                    : PT Sans Caption, Arial, Helvetica, sans-serif;
 
 // Colors: //////////////////////////////////
 
 // Font
+$mainFontColor                    : #ffffff;
+$dangerFontColor                  : #b22725;
+$searchInfoBg                     : #333333;
+$linkSuccessColor                    : #77b53c;
 $labelFontColor                   : #8494ab;
-$navFontColor                     : #ffffff;
 $navFontColorHover                : #808592;
 $navFontColorActive               : #808592;
 $placeholderFontColorActive       : #bec6cf;
@@ -18,13 +23,9 @@ $footerFontColor                  : #89909d;
 $infoTxtFontColor                 : #535864;
 
 // Backgrounds
-$mainBg                           : #101114;
-$navBg                            : #1f2229;
-$navBgActive                      : #2a2d37;
-$footerBg                         : #373c43;
-$containerPayBg                   : #f7f8f8;
-$btnSimpleBottom                  : #004ca2;
-$btnSimpleTop                     : #005abf;
+$mainBg                           : #fff;
+$btnDefaultBg                     :	#5F6062;
+$btnSuccessBg                     : #77b53c;
 
 // Border
 $inputBorderColor                 : #e4e9ee;

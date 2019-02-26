@@ -1,3 +1,15 @@
+@mixin bg-image-retina($path, $retinapath, $width, $height) {
+  background-image: url($path);
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2) {
+    background-image: url($retinapath);
+    -webkit-background-size: $width $height;
+    background-size: $width $height;
+  }
+}
 // =============================================================================
 // String Replace
 // =============================================================================
@@ -121,7 +133,11 @@
     $konst: 1.00633%;
   } @else if $sum == 4 {
     $konst: 0.83%;
-  }
+  } @else if $sum == 2 {
+		$konst: 0.549450549%;
+	} @else {
+		$konst: 0;
+	}
 
   @media only screen and (min-width: 819px) {
 		width: ($col/$sum) * 100% - $konst;
