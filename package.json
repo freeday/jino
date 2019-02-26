@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
   },
-  "browserlist": [
+  "browserslist": [
     "> 1%",
     "last 3 version"
   ],
