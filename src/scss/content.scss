@@ -1,0 +1,25 @@
+.content {
+  &-domains {
+    position: relative;
+    height: 783px;
+    @include  box-sizing()
+    padding-top: 120px;
+  }
+  &-text-domains {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 12px;
+    font-weight: bold;
+    color: $mainFontColor;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  &-title-domains {
+    color: $mainFontColor;
+    font-family: $titleFontFace, $mainFontFace, Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    line-height: 80px;
+  }
+}

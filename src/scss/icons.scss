@@ -1,10 +1,21 @@
 $arr: (autorenewal, businesscard, certificate, cloud, dns, dnssec, freessl, integration, interface, redirect);
 .icon {
+  display: inline-block;
   width: 64px;
   height: 64px;
   @each $icon in $arr {
     &-#{$icon} {
       background-image: url('/img/icons/#{$icon}.svg');
     }
+  }
+  &-scroll-down {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 27px;
+    height: 50px;
+    margin-top: -110px;
+    margin-left: -13px;
+    @include bg-image-retina('/img/icons/down.png', '/img/icons/down@2x.png', 27px, 50px)
   }
 }

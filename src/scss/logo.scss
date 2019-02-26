@@ -1,0 +1,28 @@
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  &-domains {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: lowercase;
+    color: $mainFontColor;
+    vertical-align: top;
+    line-height: 1;
+  }
+  &-main {
+    display: inline-block;
+    height: 16px;
+    width: 65px;
+    svg {
+      fill: $mainFontColor;
+    }
+  }
+  &-danger {
+    svg {
+      fill: $dangerFontColor;
+    }
+  }
+}

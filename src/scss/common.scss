@@ -1,3 +1,14 @@
 .page {
   display: inline-block;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  .grid {
+    &-row {
+      width: 90%;
+      max-width: 1092px;
+      min-width: 819px;
+    }
+  }
 }

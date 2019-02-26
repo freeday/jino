@@ -1,0 +1,19 @@
+.btn {
+  color: $mainFontColor;
+  text-align: center;
+  &-success {
+    width: 264px;
+    height: 55px;
+    background-color: $btnSuccessBg;
+    border-radius: 5px;
+    font: 24px $mainFontFaceBold;
+    letter-spacing: 0.5px;
+  }
+  &-default {
+    width: 146px;
+    height: 52px;
+    border-radius: 7px;
+    background-color: $btnDefaultBg;
+    font-size: 22px;
+  }
+}
