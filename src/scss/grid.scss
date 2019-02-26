@@ -10,8 +10,9 @@
   }
   @for $i from 1 through 12 {
     &-col-#{$i} {
+      position: relative;
       @include col(1, $i)
-      background-color: black;
+      // background-color: black;
       height: 60px;
       &:first-of-type {
         margin-left: 0;
