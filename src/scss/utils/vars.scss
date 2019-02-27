@@ -1,9 +1,9 @@
 // Font
 @import "/fonts.scss";
 $mainFontFace                     : PT Sans, Arial, Helvetica, sans-serif;
-$mainFontFaceBold                 : PT Sans Bold, Arial, Helvetica, sans-serif;
+$mainFontFaceBold                 : PT Sans Bold, $mainFontFace;
 $mainFontFaceItalic               : PT Sans Italic, Arial, Helvetica, sans-serif;
-$titleFontFace                    : PT Sans Caption Bold, Arial, Helvetica, sans-serif;
+$titleFontFace                    : PT Sans Caption Bold, $mainFontFaceBold;
 
 // Colors: //////////////////////////////////
 

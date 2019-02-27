@@ -11,8 +11,10 @@
   @for $i from 1 through 12 {
     &-col-#{$i} {
       position: relative;
-      // min-width: 156px;
+      margin-bottom: 10px;
+      // min-width: 198px;
       @include col(1, $i)
+      font-size: 16px;
       &:first-of-type {
         margin-left: 0;
       }

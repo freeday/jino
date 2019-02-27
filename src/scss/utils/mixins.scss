@@ -124,7 +124,6 @@
 }
 
 @mixin col($col, $sum, $gap: 12px, $align: top) {
-  font-size: 16px;
   display: inline-block;
   box-sizing: border-box;
 	$konst: 0;
@@ -133,29 +132,49 @@
     $konst: 1.00633%;
   } @else if $sum == 4 {
     $konst: 0.83%;
+	} @else if $sum == 3 {
+		$konst: 0.732600732%;
   } @else if $sum == 2 {
 		$konst: 0.549450549%;
 	} @else {
 		$konst: 0;
 	}
 
-  @media only screen and (min-width: 819px) {
-		width: ($col/$sum) * 100% - $konst;
-		margin-left: 1.098901099%;
-    vertical-align: $align;
-  }
-	@media only screen and (max-width: 819px) {
-		width: ($col/$sum) * 100% - $konst;
-		margin-left: 1.098901099%;
-    vertical-align: $align;
-  }
-  @media only screen and (min-width: 1092px) {
-    width: ($col/$sum) * 100% - $konst;
-		margin-left: 1.098901099%;
-    vertical-align: $align;
-  }
-	@media only screen and (max-width: 320px) {
-		min-width: 156px;
-		margin-left: 0;
-  }
+	width: ($col/$sum) * 100% - $konst;
+	margin-left: 1.098901099%;
+	vertical-align: $align;
+
+	@media only screen and (min-width: 1092px) {
+		@if $sum%4 == 0 {
+			&:nth-of-type(5n) {
+				margin-left: 0;
+			}
+		}
+	}
+	@media only screen and (min-width: 819px) {
+		@if $sum%4 == 0 {
+			&:nth-of-type(5n) {
+				margin-left: 0;
+			}
+		}
+	}
+	@media only screen and (min-width: 480px) {
+		@if $sum%3 == 0 {
+			&:nth-of-type(4) {
+				margin-left: 0;
+			}
+			&:nth-of-type(7) {
+				margin-left: 0;
+			}
+		}
+	}
+	@media only screen and (min-width: 320px) {
+		@if $sum%2 == 0 {
+			&:nth-of-type(2n-1) {
+				margin-left: 0;
+			}
+		}
+	}
+	// @media only screen and (min-width: 320px) {
+	// }
 }

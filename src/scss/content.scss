@@ -30,36 +30,6 @@
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-  &-title {
-    &-xl {
-      font-size: 80px;
-      line-height: 80px;
-    }
-    &-l {
-      font-size: 50px;
-      line-height: 50px;
-    }
-    &-m {
-      font-size: 35px;
-      line-height: 35px;
-    }
-    &-domains {
-      color: $mainFontColor;
-      font-family: $titleFontFace, $mainFontFace, Arial, Helvetica, sans-serif;
-      font-size: 80px;
-      line-height: 80px;
-    }
-    &-bonus {
-      margin-top: 55px;
-      margin-bottom: 80px;
-      color: $defaultFontColor;
-      font-family: $mainFontFaceBold, $mainFontFace, Arial, Helvetica, sans-serif;
-    }
-    &-why {
-      color: $mainFontColor;
-      font-family: $mainFontFaceBold, $mainFontFace, Arial, Helvetica, sans-serif;
-    }
-  }
 }
 .service {
   &-name {
@@ -91,8 +61,5 @@
       @include box-sizing();
       background: #f7f7f7;
     }
-  }
-  .content-title-l.content-title-why {
-    font-family: $titleFontFace, $mainFontFace, Arial, Helvetica, sans-serif;
   }
 }

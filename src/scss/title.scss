@@ -1,0 +1,30 @@
+.title {
+  color: $mainFontColor;
+  font-weight: bold;
+  &-bonus {
+    margin-top: 45px;
+    margin-bottom: 80px;
+    color: $defaultFontColor;
+  }
+  &-xl {
+    font-size: 80px;
+    line-height: 80px;
+    &-h1 {
+      font-family: $titleFontFace;
+    }
+  }
+  &-l {
+    font-size: 50px;
+    line-height: 50px;
+    &-h2 {
+      font-family: $titleFontFace;
+    }
+  }
+  &-m {
+    font-size: 35px;
+    line-height: 35px;
+    &-h3 {
+      font-family: $mainFontFaceBold;
+    }
+  }
+}

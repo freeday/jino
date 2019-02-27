@@ -8,13 +8,14 @@
     &-row {
       width: 90%;
       max-width: 1092px;
-      min-width: 819px;
+      // min-width: 819px;
     }
   }
   &-domains {
-    .grid-col-1 {
-      height: 60px;
-    }
+  }
+  .grid-col-1 {
+    height: 60px;
+    margin-bottom: 0;
   }
   &-bonus {
     .btn-success {
