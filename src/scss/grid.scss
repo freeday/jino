@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 1092px;
-    min-width: 819px;
+    min-width: 320px;
     margin-left: auto;
     margin-right: auto;
     font-size: 0;
@@ -11,9 +11,8 @@
   @for $i from 1 through 12 {
     &-col-#{$i} {
       position: relative;
+      // min-width: 156px;
       @include col(1, $i)
-      // background-color: black;
-      height: 60px;
       &:first-of-type {
         margin-left: 0;
       }

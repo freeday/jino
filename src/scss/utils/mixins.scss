@@ -155,7 +155,7 @@
     vertical-align: $align;
   }
 	@media only screen and (max-width: 320px) {
-    width: percentage($col/$sum);
-    vertical-align: $align;
+		min-width: 156px;
+		margin-left: 0;
   }
 }

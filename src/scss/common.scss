@@ -11,4 +11,14 @@
       min-width: 819px;
     }
   }
+  &-domains {
+    .grid-col-1 {
+      height: 60px;
+    }
+  }
+  &-bonus {
+    .btn-success {
+      margin-top: 50px;
+    }
+  }
 }

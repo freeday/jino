@@ -2,8 +2,17 @@
   &-domains {
     position: relative;
     height: 783px;
-    @include  box-sizing()
+    @include box-sizing();
     padding-top: 120px;
+  }
+  &-bonus {
+    color: $defaultFontColor;
+    .grid-row {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
   &-text-domains {
     position: absolute;
@@ -16,10 +25,83 @@
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-  &-title-domains {
-    color: $mainFontColor;
-    font-family: $titleFontFace, $mainFontFace, Arial, Helvetica, sans-serif;
-    font-size: 80px;
-    line-height: 80px;
+  &-title {
+    &-domains {
+      color: $mainFontColor;
+      font-family: $titleFontFace, $mainFontFace, Arial, Helvetica, sans-serif;
+      font-size: 80px;
+      line-height: 80px;
+    }
+    &-bonus {
+      margin-top: 55px;
+      margin-bottom: 80px;
+      color: $defaultFontColor;
+      font-family: $mainFontFaceBold, $mainFontFace, Arial, Helvetica, sans-serif;
+      font-size: 35px;
+      line-height: 35px;
+    }
+  }
+}
+.service {
+  &-name {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  &-info {
+    position: relative;
+    display: none;
+    border: 1px solid $infoBorderColor;
+    padding: 28px 40px;
+    background-color: $infoBgColor;
+    border-radius: 7px;
+    font-size: 16px;
+    text-align: left;
+    &-corner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $infoBorderColor;
+      border-width: 1px 0 0 1px;
+      @include transform(rotate(45deg) translate(-9px, -9px))
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      transform-origin: 0 0;
+      @include box-sizing();
+      background: #f7f7f7;
+    }
+    // &:before {
+    //   width: 18px;
+    //   height: 18px;
+    //   border: 1px solid $infoBorderColor;
+    //   border-width: 1px 0 0 1px;
+    //   -webkit-transform: rotate(45deg) translate(-9px, -9px);
+    //   -moz-transform: rotate(45deg) translate(-9px, -9px);
+    //   -ms-transform: rotate(45deg) translate(-9px, -9px);
+    //   transform: rotate(45deg) translate(-9px, -9px);
+    //   -webkit-transform-origin: 0 0;
+    //   -moz-transform-origin: 0 0;
+    //   -ms-transform-origin: 0 0;
+    //   transform-origin: 0 0;
+    //   -webkit-box-sizing: border-box;
+    //   -moz-box-sizing: border-box;
+    //   box-sizing: border-box;
+    //   content: '';
+    //   position: absolute;
+    //   top: 1px;
+    //   left: 0;
+    //   z-index: 15;
+    //   background: #f7f7f7;
+    // }
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 1px;
+    //   left: 0;
+    //   z-index: 15;
+    //   background: #f7f7f7;
+    // }
   }
 }

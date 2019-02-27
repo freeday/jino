@@ -5,12 +5,15 @@
   &-domains {
     display: inline-block;
     margin-left: 5px;
-    font-size: 16px;
-    font-weight: bold;
+    font: 16px $mainFontFaceBold;
     text-transform: lowercase;
     color: $mainFontColor;
     vertical-align: top;
     line-height: 1;
+    &-default {
+      font-family: $mainFontFace;
+      color: $defaultFontColor;
+    }
   }
   &-main {
     display: inline-block;
@@ -21,6 +24,9 @@
     }
   }
   &-danger {
+    display: inline-block;
+    height: 16px;
+    width: 65px;
     svg {
       fill: $dangerFontColor;
     }
