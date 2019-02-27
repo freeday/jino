@@ -2,9 +2,12 @@
   color: $mainFontColor;
   font-weight: bold;
   &-bonus {
-    margin-top: 45px;
     margin-bottom: 80px;
     color: $defaultFontColor;
+  }
+  &-why {
+    margin-top: 105px;
+    margin-bottom: 55px;
   }
   &-xl {
     font-size: 80px;
@@ -24,6 +27,7 @@
     font-size: 35px;
     line-height: 35px;
     &-h3 {
+      margin-top: 45px;
       font-family: $mainFontFaceBold;
     }
   }
