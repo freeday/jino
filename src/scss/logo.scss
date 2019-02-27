@@ -15,6 +15,9 @@
       color: $defaultFontColor;
     }
   }
+  &-why {
+    font-family: $mainFontFace;
+  }
   &-main {
     display: inline-block;
     height: 16px;
