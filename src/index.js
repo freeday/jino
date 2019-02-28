@@ -44,20 +44,37 @@ var reHeight = function (list) {
   }
 }
 
+var maxHeight = function () {
+  const marginsBottom = 10
+  var elems = document.getElementById('row').children
+  var max = 0
+  for (var i = 0; i < elems.length; i++) {
+    var current = 0
+    var children = elems[i].children[0].children
+    for (var j = 0; j < children.length; j++) {
+      current += children[j].clientHeight
+    }
+    if (current > max) {
+      max = current
+    }
+  }
+  return max - marginsBottom
+}
+
 var recalculateHint = function (o) {
   if (o === undefined) return
-  var el            = o.el
-  var hint          = o.hint
-  var corner        = o.corner
-  var heightHint    = o.heightHint
-  var newHeightEl   = el.parentNode.clientHeight + corner.clientHeight
-  var heightEl      = o.heightEl
-  var pos = getCoords(el)
-  var newHeight = el.children[0].clientHeight + el.children[1].clientHeight
-  console.log(pos.top + newHeight)
-  // el.style.height = `${heightHint + newHeightEl}px`
-  // console.log(pos.top + newHeightEl)
-  hint.style.top = `${pos.top + heightEl + corner.clientHeight + 10}px`
+  let el = o.el
+  let hint = o.hint
+  let id = o.id
+  let corner = o.corner
+  let max = maxHeight() - 20
+  let heightHint = hint.clientHeight
+
+  let pos = getCoords(el)
+
+  el.style.height = `${max + heightHint + corner.clientHeight}px`
+
+  hint.style.top = `${pos.top + max}px`
   corner.style.left = `${pos.left + el.clientWidth/2}px`
 }
 
@@ -89,7 +106,7 @@ var run = function () {
 
       if (opened.length) {
         let openEl = opened[0]
-        openEl.el.style.height = `${openEl.heightEl}px`
+        openEl.el.style.height = `${openEl.maxHeight}px`
         openEl.hint.style.opacity = '0'
         openEl.hint.style.top = ''
         setTimeout(()=>{
@@ -105,19 +122,19 @@ var run = function () {
           return
         }
 
-        let hint          = document.getElementById(`${id}Hint`)
-        let corner        = hint.children[1]
-        let heightHint    = hint.clientHeight
-        let newHeightEl   = el.parentNode.clientHeight + corner.clientHeight
-        let heightEl      = el.clientHeight
-
+        let hint            = document.getElementById(`${id}Hint`)
+        let corner          = hint.children[1]
+        let newHeightEl     = el.parentNode.clientHeight + corner.clientHeight
+        let heightHint      = hint.clientHeight
+        // debugger
+        let max             = maxHeight() - 20
         if (id !== 'row') {
           var pos = getCoords(el)
         }
 
-        el.style.height = `${heightHint + newHeightEl}px`
+        el.style.height = `${max + heightHint + corner.clientHeight}px`
         setTimeout(()=>{
-          hint.style = `opacity: 1; top: ${pos.top + newHeightEl + 10}px`
+          hint.style = `opacity: 1; top: ${pos.top + max}px`
           corner.style.left = `${pos.left + el.clientWidth/2}px`
         }, 50)
 
@@ -125,10 +142,10 @@ var run = function () {
                 el: el,
                 hint: hint,
                 id: id,
-                heightHint: heightHint,
-                heightEl: heightEl,
                 newHeightEl: newHeightEl,
                 corner: corner,
+                maxHeight: max,
+                heightHint: heightHint
               })
 
     }).then(()=>{

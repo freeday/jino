@@ -1,9 +1,11 @@
 .container {
-  position: relative;
   &-domains {
     height: 843px;
     background: url('/img/bg/bg_skyball.jpg') no-repeat center center;
     background-size: 1428px 843px;
+    .grid-row {
+      position: relative;
+    }
   }
   &-why {
     max-height: 840px;

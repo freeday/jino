@@ -10,7 +10,6 @@
   }
   @for $i from 1 through 12 {
     &-col-#{$i} {
-      position: relative;
       margin-bottom: 10px;
       // min-width: 198px;
       @include col(1, $i)

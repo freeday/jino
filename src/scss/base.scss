@@ -4,12 +4,14 @@ html {
 }
 
 body {
-  position: relative;
   width: 100%;
   text-align: center;
   vertical-align: top;
   font: 14px $mainFontFace;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
   overflow-x: hidden;
+  -webkit-text-size-adjust: none;
 }
 
 html, body {
