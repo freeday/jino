@@ -1,37 +1,46 @@
 .alert {
+  position: relative;
+  width: 100%;
+  max-width: 1092px;
   @include  box-sizing();
+  margin: 0 auto;
+  padding: 22px 35px 22px 40px;
+  border-radius: 5px;
   text-align: left;
   font-size: 0;
   &-danger {
-    width: 90%;
-    // max-width: 1092px;
-    // height: 110px;
-    margin: 0 auto;
-    padding: 22px 24px 22px 40px;
-    border-radius: 5px;
     background-color: $dangerColorBg;
   }
   &-txt {
     display: inline-block;
+    @include box-sizing();
     color: $mainFontColor;
     font-size: 22px;
     vertical-align: top;
-    &-content {
-      padding-top: 4px;
+    &-plus {
+      width: 100%;
+      padding-right: 210px;
+      white-space: normal;
+    }
+    &-1000 {
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      @include transform(translate(0, -50%));
+      text-align: right;
+      letter-spacing: 1px;
+      transform-origin: 50% 50%;
     }
     &-xl {
       font: 50px $titleFontFace;
-      letter-spacing: 3px;
     }
   }
   &-separate {
-    position: relative;
-    top: -2px;
-    display: inline-block;
+    position: absolute;
+    right: 210px;
+    top: 22px;
+    bottom: 22px;
     width: 1px;
-    height: 70px;
-    margin-left: 74px;
-    margin-right: 32px;
     background-color: $separateColorBg;
   }
 }

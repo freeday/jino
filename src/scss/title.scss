@@ -1,14 +1,6 @@
 .title {
   color: $mainFontColor;
   font-weight: bold;
-  &-bonus {
-    margin-bottom: 80px;
-    color: $defaultFontColor;
-  }
-  &-why {
-    margin-top: 105px;
-    margin-bottom: 55px;
-  }
   &-xl {
     font-size: 80px;
     line-height: 80px;
@@ -27,8 +19,16 @@
     font-size: 35px;
     line-height: 35px;
     &-h3 {
-      margin-top: 45px;
+      margin-top: 55px;
       font-family: $mainFontFaceBold;
     }
+  }
+  &-why {
+    margin-top: 105px;
+    margin-bottom: 55px;
+  }
+  &-bonus {
+    margin-bottom: 80px;
+    color: $defaultFontColor;
   }
 }

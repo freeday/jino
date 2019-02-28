@@ -6,8 +6,10 @@
     background-size: 1428px 843px;
   }
   &-why {
-    height: 840px;
+    max-height: 840px;
+    padding-bottom: 40px;
     margin-top: 85px;
+    @include box-sizing();
     background: url('/img/bg/bg_sky.jpg') no-repeat center center;
     background-size: 1424px 840px;
   }

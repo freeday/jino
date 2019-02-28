@@ -1,5 +1,5 @@
 @import "/mixins.scss";
 @include font-face('PT Sans', '../fonts/PT_Sans/PTSansRegular/PTSansRegular');
 @include font-face('PT Sans Italic', '../fonts/PT_Sans/PTSansItalic/PTSansItalic');
-@include font-face('PT Sans Bold', '../fonts/PT_Sans/PTSansBold/PTSansBold');
-@include font-face('PT Sans Caption Bold', '../fonts/PTSansCaption/PTSansCaptionBold/PTSansCaptionBold');
+@include font-face('PT Sans Bold', '../fonts/PT_Sans/PTSansBold/PTSansBold', bold);
+@include font-face('PT Sans Caption Bold', '../fonts/PTSansCaption/PTSansCaptionBold/PTSansCaptionBold', bold);

@@ -1,8 +1,11 @@
 .content {
   &-copy {
-    font-size: 14px;
-    color: $mainFontColor;
+    max-width: 1092px;
+    margin: 0 auto;
     opacity: .5;
+    color: $mainFontColor;
+    font-size: 14px;
+    text-align: left;
   }
   &-domains {
     position: relative;
