@@ -35,12 +35,12 @@ var ready = function () {
     for (var i = 0; i < list.length; i++) {
       list[i].className = getClassName(window.innerWidth)
     }
-    console.log("Resource conscious resize callback!");
   }
   // handle event
   window.addEventListener("optimizedResize", function() {
       setClassName(list)
   })
+  setClassName(list)
 }
 
 document.addEventListener("DOMContentLoaded", ready);
