@@ -126,7 +126,7 @@ var run = function () {
         let corner          = hint.children[1]
         let newHeightEl     = el.parentNode.clientHeight + corner.clientHeight
         let heightHint      = hint.clientHeight
-        // debugger
+
         let max             = maxHeight() - 20
         if (id !== 'row') {
           var pos = getCoords(el)
@@ -160,6 +160,5 @@ var run = function () {
   reHeight(parent.children)
 
 }
-
 
 document.addEventListener("DOMContentLoaded", run);
