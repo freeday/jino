@@ -29,6 +29,9 @@
     .btn-success {
       margin-top: 50px;
     }
+    .service-item {
+      @include transition(all .2s linear);
+    }
   }
 }
 .icon-plus-bold {
