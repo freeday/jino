@@ -63,11 +63,14 @@
   .alert-txt-plus {
     padding-right: 180px;
   }
+  .title-bonus {
+    margin-bottom: 60px;
+  }
 }
 @media only screen and (max-width: 600px) {
   .title-xl-h1 {
     font-size: 40px;
-    line-height: 40px;
+    line-height: 50px;
   }
   .form-search-domains {
       width: 400px;
@@ -134,9 +137,7 @@
   }
   .title-m-h3 {
     width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
+    margin: 30px auto 40px;
     font-size: 21px;
   }
   .title-l {
@@ -144,6 +145,31 @@
     margin: 30px auto 30px;
     font-size: 28px;
     line-height: 36px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .form-search-domains .btn-default {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -73px;
+  }
+  .form-info-txt {
+    padding-top: 167px;
+  }
+  .form-input-xl .input {
+    padding-right: 37px;
+  }
+  .form-search-domains {
+    width: 100%;
+    min-width: 320px;
+  }
+  .title-xl-h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .content-text-domains {
+    top: 50px;
   }
 }
 @media only screen and (max-width: 320px) {
