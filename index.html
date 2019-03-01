@@ -25,20 +25,20 @@
             Честная цена<br />за домен .RU &mdash; 39&#8381;
           </h1>
           <div class="form-search-domains">
-            <form class="form">
+            <form class="form" id="form">
               <div class="form-info">
-                <div class="form-info-bg">
+                <div id="info" class="form-info-bg" style="visibility: hidden">
                   <div class="form-info-txt">
-                    Домен example.ru &mdash; свободен.&nbsp;
+                    Домен <span id="output">example.ru</span> &mdash; свободен.&nbsp;
                     <a href="#" class="link link-success">
                       Зарегистировать за 39&#8381;
                     </a>
                   </div>
                 </div>
                 <div class="form-input form-input-xl">
-                  <input class="input" type="text" name="" />
+                  <input class="input" type="text" id="domain" />
                 </div>
-                <button id="btnSbmt" class="btn btn-default" type="submit">Проверить</button>
+                <button class="btn btn-default" type="submit">Проверить</button>
               </form>
             </div>
           </div>
