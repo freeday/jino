@@ -1,5 +1,6 @@
 import './scss/main.scss'
 import getCoords from './js/coords'
+import helper from './js/helper'
 
 (function() {
   var throttle = function(type, name, obj) {
@@ -18,147 +19,85 @@ import getCoords from './js/coords'
 
   throttle("resize", "optimizedResize");
 
-})();
 
-var giveNumClassName = function(w) {
-  if (w >= 819) {
-    return 4
-  } else if (w >= 480) {
-    return 3
-  } else {
-    return 2
-  }
-}
+  var run = function() {
+    var form = document.getElementById('form')
+    var input = document.getElementById('domain')
+    var output = document.getElementById('output')
+    var parent = document.getElementById('row')
+    var list = document.getElementById('row').children
+    var opened = []
 
-var replaceClassName = function(list) {
-  for (var i = 0; i < list.length; i++) {
-    let col = list[i]
-    col.className = `grid-col-${giveNumClassName(window.innerWidth)}`
-  }
-}
+    var handler = (e) => {
+      parent.removeEventListener('click', handler)
 
-var reHeight = function (list) {
-  for (var i = 0; i < list.length; i++) {
-    let child = list[i].children
-    child[0].style.height = `${child[0].clientHeight}px`
-  }
-}
+      var target = e.target
+      var id = target.id || target.parentNode.id
+      var el = document.getElementById(id)
+      let prom = new Promise((resolve) => {
 
-var maxHeight = function () {
-  const marginsBottom = 10
-  var elems = document.getElementById('row').children
-  var max = 0
-  for (var i = 0; i < elems.length; i++) {
-    var current = 0
-    var children = elems[i].children[0].children
-    for (var j = 0; j < children.length; j++) {
-      current += children[j].clientHeight
-    }
-    if (current > max) {
-      max = current
-    }
-  }
-  return max - marginsBottom
-}
+        if (opened.length) {
+          helper.hide(opened[0])
+          setTimeout(() => { resolve(opened.pop().id) }, 200)
+        } else {
+          resolve({})
+        }
 
-var recalculateHint = function (o) {
-  if (o === undefined) return
-  let el = o.el
-  let hint = o.hint
-  let id = o.id
-  let corner = o.corner
-  let max = maxHeight() - 20
-  let heightHint = hint.clientHeight
+      }).then((idx) => {
 
-  let pos = getCoords(el)
+        if ((id === idx) || id == 'row') {return}
 
-  el.style.height = `${max + heightHint + corner.clientHeight}px`
+        var pos = getCoords(el)
+        var hint = document.getElementById(`${id}Hint`)
+        var o = {
+          id: id,
+          el: el,
+          list: list,
+          hint: hint,
+          corner: hint.children[1],
+          maxHeight: helper.calculateMaxHeight(parent.children) - 20,
+          heightHint: hint.clientHeight,
+          top: pos.top,
+          left: pos.left
+        }
 
-  hint.style.top = `${pos.top + max}px`
-  corner.style.left = `${pos.left + el.clientWidth/2}px`
-}
+        helper.show(o)
+        opened.push(o)
 
-
-var run = function () {
-
-  var parent = document.getElementById('row')
-  var list = document.getElementById('row').children
-  var opened = []
-
-  // handle event
-  window.addEventListener("optimizedResize", function() {
-      replaceClassName(parent.childNodes)
-      reHeight(parent.children)
-      setTimeout(() => {
-        recalculateHint(opened[0])
-      }, 400)
-  })
-
-  var handler = (e) => {
-
-    parent.removeEventListener('click', handler)
-
-    var target     = e.target
-    var id         = target.id || target.parentNode.id
-    var el         = document.getElementById(id)
-
-    let prom = new Promise((resolve) => {
-
-      if (opened.length) {
-        let openEl = opened[0]
-        openEl.el.style.height = `${openEl.maxHeight}px`
-        openEl.hint.style.opacity = '0'
-        openEl.hint.style.top = ''
+      }).then(()=>{
         setTimeout(()=>{
-          resolve(opened.pop())
+          parent.addEventListener("click", handler)
         }, 200)
+      })
+    }
+
+    helper.replaceClassName(list)
+    helper.changeHeight(list)
+
+    // handle event
+    form.addEventListener("submit", function(e) {
+      e.preventDefault()
+      var val = input.value
+      if (val.length) {
+        info.style.visibility = ''
+        if (val.match(/[.]ru/) === null) {
+          val += '.ru'
+        }
+        input.value = val
+        output.innerHTML = val
       } else {
-        resolve({})
+        info.style.visibility = 'hidden'
       }
     })
-    prom.then((o) => {
-
-        if (id === o.id) {
-          return
-        }
-
-        let hint            = document.getElementById(`${id}Hint`)
-        let corner          = hint.children[1]
-        let newHeightEl     = el.parentNode.clientHeight + corner.clientHeight
-        let heightHint      = hint.clientHeight
-
-        let max             = maxHeight() - 20
-        if (id !== 'row') {
-          var pos = getCoords(el)
-        }
-
-        el.style.height = `${max + heightHint + corner.clientHeight}px`
-        setTimeout(()=>{
-          hint.style = `opacity: 1; top: ${pos.top + max}px`
-          corner.style.left = `${pos.left + el.clientWidth/2}px`
-        }, 50)
-
-        opened.push({
-                el: el,
-                hint: hint,
-                id: id,
-                newHeightEl: newHeightEl,
-                corner: corner,
-                maxHeight: max,
-                heightHint: heightHint
-              })
-
-    }).then(()=>{
-      setTimeout(()=>{
-        parent.addEventListener("click", handler)
-      }, 200)
+    parent.addEventListener("click", handler)
+    window.addEventListener("optimizedResize", function() {
+        setTimeout(() => {
+          helper.replaceClassName(list)
+          helper.changeHeight(list)
+          helper.changePropertiesHint(opened[0])
+        }, 400)
     })
   }
 
-  parent.addEventListener("click", handler)
-  replaceClassName(parent.childNodes)
-  reHeight(parent.children)
-
-}
-
-document.addEventListener("DOMContentLoaded", run);
+  document.addEventListener("DOMContentLoaded", run);
+})();

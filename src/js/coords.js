@@ -1,4 +1,4 @@
-module.exports = function (elem) { // кроме IE8-
+module.exports = function (elem) {
   var box = elem.getBoundingClientRect();
 
   return {
