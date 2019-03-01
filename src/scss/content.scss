@@ -36,6 +36,9 @@
   }
 }
 .service {
+  &-item {
+    cursor: pointer;
+  }
   &-name {
     margin-top: 10px;
     font-size: 20px;
