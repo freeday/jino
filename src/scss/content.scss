@@ -47,6 +47,7 @@
     position: absolute;
     top: -9999999999px;
     min-width: 320px;
+    max-width: 1092px;
     @include box-sizing()
     border: 1px solid $infoBorderColor;
     padding: 28px 40px;
@@ -71,6 +72,10 @@
       transform-origin: 0 0;
       @include box-sizing();
       background: #f7f7f7;
+    }
+    &-txt {
+      // max-width: 1092px;
+      // margin: 0 auto
     }
   }
 }

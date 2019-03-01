@@ -1,6 +1,7 @@
 let getCoords = require('./coords')
-module.exports = {
+let dimensions = require('./dimensions')
 
+module.exports = {
   calculateMaxHeight: function (list) {
     const marginsBottom = 10
     var max = 0
@@ -26,10 +27,12 @@ module.exports = {
     let max = this.calculateMaxHeight(o.list) - offsetTop
     let heightHint = hint.clientHeight
     let pos = getCoords(el)
+    let leftHint = dimensions.getMaxWidthBody()/2 - dimensions.getMaxWidthHint()/2
 
     el.style.height = `${max + heightHint + corner.clientHeight}px`
     hint.style.top = `${pos.top + max}px`
-    corner.style.left = `${pos.left + el.clientWidth/2}px`
+    hint.style.left = `${leftHint}px`
+    corner.style.left = `${(pos.left + el.clientWidth/2) - leftHint}px`
   },
 
   changeHeight: function (list) {
@@ -63,14 +66,17 @@ module.exports = {
   },
 
   show: function (o) {
+    const borderHint = 1
     let max = o.maxHeight
     let corner = o.corner
     let el = o.el
+    let hint = o.hint
+    let leftHint = dimensions.getMaxWidthBody()/2 - dimensions.getMaxWidthHint()/2
 
     el.style.height = `${max + o.heightHint + corner.clientHeight}px`
     setTimeout(() => {
-      o.hint.style = `opacity: 1; top: ${o.top + max}px`
-      corner.style.left = `${o.left + el.clientWidth/2}px`
+      hint.style = `opacity: 1; top: ${o.top + max}px; left: ${leftHint}px`
+      corner.style.left = `${(o.left + el.clientWidth/2) - leftHint}px`
     }, 50)
   }
 }

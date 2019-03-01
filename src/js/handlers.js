@@ -25,6 +25,7 @@ var iconsHandler = function (e, parent, list, stack) {
     if ((id === idx) || (id === 'row') || stack.length) {return stack}
 
     var pos = getCoords(el)
+    console.log(pos)
     var hint = document.getElementById(`${id}Hint`)
     var o = {
       id: id,
