@@ -1,7 +1,7 @@
 {
-  "name": "jino",
+  "name": "jino-domains",
   "version": "1.0.0",
-  "description": "",
+  "description": "``` git clone git@github.com:freeday/jino-domains.git cd jino-domains npm i npm run dev ```",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
@@ -33,5 +33,13 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeday/jino-documents.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeday/jino-documents/issues"
+  },
+  "homepage": "https://github.com/freeday/jino-documents#readme"
 }
