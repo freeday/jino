@@ -68,7 +68,6 @@ var formSubmitHandler = function (e, input, info, output) {
   }
 }
 
-
 module.exports = {
   stack: this.stack,
   iconsHandler: iconsHandler,
