@@ -36,10 +36,10 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freeday/jino-documents.git"
+    "url": "git+https://github.com/freeday/jino-domains.git"
   },
   "bugs": {
-    "url": "https://github.com/freeday/jino-documents/issues"
+    "url": "https://github.com/freeday/jino-domains/issues"
   },
-  "homepage": "https://github.com/freeday/jino-documents#readme"
+  "homepage": "https://github.com/freeday/jino-domains#readme"
 }
