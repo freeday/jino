@@ -30,7 +30,7 @@ var run = function() {
 
   form.addEventListener("submit", function(e) {
     e.preventDefault()
-    formSubmitHandler(e, input, info, output)
+    handlers.formSubmitHandler(e, input, info, output)
   })
 
   row.addEventListener("click", {
